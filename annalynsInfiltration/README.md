@@ -16,9 +16,9 @@ Having found the kidnappers, Annalyn considers which of the following actions sh
 
   Free prisoner: Annalyn can try sneaking into the camp to free the prisoner. This is a risky thing to do and can only succeed in one of two ways:
 
-    If Annalyn has her pet dog with her she can rescue the prisoner if the archer is asleep. The knight is scared of the dog and the archer will not have time to get ready before Annalyn and the prisoner can escape.
+  - If Annalyn has her pet dog with her she can rescue the prisoner if the archer is asleep. The knight is scared of the dog and the archer will not have time to get ready before Annalyn and the prisoner can escape.
 
-    If Annalyn does not have her dog then she and the prisoner must be very sneaky! Annalyn can free the prisoner if the prisoner is awake and the knight and archer are both sleeping, but if the prisoner is sleeping they can't be rescued: the prisoner would be startled by Annalyn's sudden appearance and wake up the knight and archer.
+  - If Annalyn does not have her dog then she and the prisoner must be very sneaky! Annalyn can free the prisoner if the prisoner is awake and the knight and archer are both sleeping, but if the prisoner is sleeping they can't be rescued: the prisoner would be startled by Annalyn's sudden appearance and wake up the knight and archer.
 
 
 # TASKS   
@@ -27,36 +27,32 @@ You have four tasks: to implement the logic for determining if the above actions
 # 1. Check if the 'Fast Attack' action is possible
 Implement a function named canExecuteFastAttack that takes a boolean value which indicates if the knight is awake. This function returns true if the 'Fast Attack' action is available based on the state of the character. Otherwise, returns false:
 
-const knightIsAwake = true;
-canExecuteFastAttack(knightIsAwake);
-// => false
+- const knightIsAwake = true;
+  canExecuteFastAttack(knightIsAwake);// => false
 
 
 # 2. Check if the 'Spy' action is possible
 Implement a function named canSpy that takes three boolean values, indicating if the knight, archer and the prisoner, respectively, are awake. The function returns true if the 'Spy' action is available based on the state of the characters. Otherwise, returns false:
 
-const knightIsAwake = false;
-const archerIsAwake = true;
-const prisonerIsAwake = false;
-canSpy(knightIsAwake, archerIsAwake, prisonerIsAwake);
-// => true
+- const knightIsAwake = false;
+- const archerIsAwake = true;
+- const prisonerIsAwake = false;
+  canSpy(knightIsAwake, archerIsAwake, prisonerIsAwake);// => true
 
 
 # 3. Check if the 'Signal Prisoner' action is possible
 Implement a function named canSignalPrisoner that takes two boolean values, indicating if the archer and the prisoner, respectively, are awake. The function returns true if the 'Signal Prisoner' action is available based on the state of the characters. Otherwise, returns false:
 
-const archerIsAwake = false;
-const prisonerIsAwake = true;
-canSignalPrisoner(archerIsAwake, prisonerIsAwake);
-// => true
+- const archerIsAwake = false;
+- const prisonerIsAwake = true;
+  canSignalPrisoner(archerIsAwake, prisonerIsAwake); // => true
 
 
 # 4. Check if the 'Free Prisoner' action is possible
 Implement a function named canFreePrisoner that takes four boolean values. The first three parameters indicate if the knight, archer and the prisoner, respectively, are awake. The last parameter indicates if Annalyn's pet dog is present. The function returns true if the 'Free Prisoner' action is available based on the state of the characters and Annalyn's pet dog presence. Otherwise, it returns false:
 
-const knightIsAwake = false;
-const archerIsAwake = true;
-const prisonerIsAwake = false;
-const petDogIsPresent = false;
-canFreePrisoner(knightIsAwake, archerIsAwake, prisonerIsAwake, petDogIsPresent);
-// => false
+- const knightIsAwake = false;
+- const archerIsAwake = true;
+- const prisonerIsAwake = false;
+- const petDogIsPresent = false; 
+  canFreePrisoner(knightIsAwake, archerIsAwake, prisonerIsAwake, petDogIsPresent);// => false
