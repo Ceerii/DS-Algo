@@ -2,12 +2,9 @@ const PREPARATION_MINUTES_PER_LAYER = 2;
 const EXPECTED_MINUTES_IN_OVEN = 40;
 
 function remainingMinutesInOven(actualMinutesInOven) {
-    if(actualMinutesInOven <= EXPECTED_MINUTES_IN_OVEN){
-       const difference = EXPECTED_MINUTES_IN_OVEN - actualMinutesInOven;
-       return difference;
-    }
+  return EXPECTED_MINUTES_IN_OVEN - actualMinutesInOven;
+    
 }
-
 
 console.log("Minutes Left In Oven: ", remainingMinutesInOven(30));
 console.log("Minutes Left In Oven: ", remainingMinutesInOven(20));
@@ -15,19 +12,15 @@ console.log("Minutes Left In Oven: ", remainingMinutesInOven(10));
 
 
 function preparationTimeInMinutes(numberOfLayers) {
-  const multiply = numberOfLayers * PREPARATION_MINUTES_PER_LAYER;
-  return multiply;
+  return numberOfLayers * PREPARATION_MINUTES_PER_LAYER;
 }
 
 console.log("Preparation Time: ", preparationTimeInMinutes(2));
 console.log("Preparation Time: ", preparationTimeInMinutes(5));
 console.log("Preparation Time: ", preparationTimeInMinutes(13));
 
-
 function totalTimeInMinutes(numberOfLayers, actualMinutesInOven) {
- const preparationTime = preparationTimeInMinutes(numberOfLayers);
- const sum = preparationTime + actualMinutesInOven;
- return sum;
+ return preparationTimeInMinutes(numberOfLayers) + actualMinutesInOven ;
 }
 
 console.log("Total Time Spent: ", preparationTimeInMinutes(2, 30));
