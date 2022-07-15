@@ -1,34 +1,33 @@
-# Bird Watcher
-
+# Vehicle Purchase
 # Instructions
 
-You are an avid bird watcher that keeps track of how many birds have visited your garden. Usually, you use a tally in a notebook to count the birds but you want to better work with your data. You already digitalized the bird counts per day for the past weeks that you kept in the notebook.
+In this exercise, you will write some code to help you prepare to buy a vehicle.
 
-Now you want to determine the total number of birds that you counted, calculate the bird count for a specific week and correct a counting mistake.
+You have three tasks, one to determine if you will need to get a licence, one to help you choose between two vehicles and one to estimate the acceptable price for a used vehicle.
 
-Note
-To practice, use a for loop solve each of the tasks below.
+1. Determine if you will need a drivers licence
+Some kinds of vehicles require a drivers license to operate them. Assume only the kinds 'car' and 'truck' require a license, everything else can be operated without a license.
 
-1. Determine the total number of birds that you counted so far
-Let us start analyzing the data by getting a high-level view. Find out how many birds you counted in total since you started your logs.
+Implement the needsLicense(kind) function that takes the kind of vehicle and returns a boolean indicating whether you need a license for that kind of vehicle.
 
-Implement a function totalBirdCount that accepts an array that contains the bird count per day. It should return the total number of birds that you counted.
+needsLicense('car');// => true
 
-birdsPerDay = [2, 5, 0, 7, 4, 1, 3, 0, 2, 5, 0, 1, 3, 1];
-totalBirdCount(birdsPerDay);// => 34
+needsLicense('bike');// => false
 
-2. Calculate the number of visiting birds in a specific week
-Now that you got a general feel for your bird count numbers, you want to make a more fine-grained analysis.
+2. Choose between two potential vehicles to buy
+You evaluate your options of available vehicles. You manage to narrow it down to two options but you need help making the final decision. For that implement the function chooseVehicle(option1, option2) that takes two vehicles as arguments and returns a decision that includes the option that comes first in dictionary order.
 
-Implement a function birdsInWeek that accepts an array of bird counts per day and a week number. It returns the total number of birds that you counted in that specific week. You can assume weeks are always tracked completely.
+chooseVehicle('Wuling Hongguang', 'Toyota Corolla');// =>  'Toyota Corolla is clearly the better choice.'
 
-birdsPerDay = [2, 5, 0, 7, 4, 1, 3, 0, 2, 5, 0, 1, 3, 1];
-birdsInWeek(birdsPerDay, 2);// => 12
+chooseVehicle('Volkswagen Beetle', 'Volkswagen Golf');// =>  'Volkswagen Beetle is clearly the better choice.'
 
-3. Fix a counting mistake
-You realized that all the time you were trying to keep track of the birds, there was one hiding in a far corner of the garden. You figured out that this bird always spent every second day in your garden. You do not know exactly where it was in between those days but definitely not in your garden. Your bird watcher intuition also tells you that the bird was in your garden on the first day that you tracked in your list.
+3. Calculate an estimation for the price of a used vehicle
+Now that you made your decision you want to make sure you get a fair price at the dealership. Since you are interested in buying a used vehicle, the price depends on how old the vehicle is. For a rough estimate, assume if the vehicle is less than 3 years old, it costs 80% of the original price it had when it was brand new. If it is more than 10 years old, it costs 50%. If the vehicle is at least 3 years old but not older than 10 years, it costs 70% of the original price.
 
-Given this new information, write a function fixBirdCountLog that takes an array of birds counted per day as an argument. It should correct the counting mistake and return the modified array.
+Implement the calculateResellPrice(originalPrice, age) function that applies this logic using if, else if and else (there are other ways but you want to practice). It takes the original price and the age of the vehicle as arguments and returns the estimated price in the dealership.
 
-birdsPerDay = [2, 5, 0, 7, 4, 1];
-fixBirdCountLog(birdsPerDay);// => [3, 5, 1, 7, 5, 1]
+calculateResellPrice(1000, 1);// => 800
+
+calculateResellPrice(1000, 5);// => 700
+
+calculateResellPrice(1000, 15);// => 500
